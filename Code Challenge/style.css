@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+nav {
+    height: 60px;
+    background-color: red;
+    text-align: center;
+    line-height: 60px;
+    position: fixed;
+    width: 100%;
+    
+}
+nav .title {
+    color: #ffffff;
+    font-size: 2rem;
+}
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box {
+    background-color: green;
+    height: 50%;
+    width: 90%;
+    color: white;
+}
+.question, .answer {
+    font-size: 1.3rem;
+    padding-left: 10px;
+}
+.answer {
+    color: yellow;
+}
+.inputt {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputt input {
+    height: 50px;
+    border-radius: 30px;
+    padding-left: 15px;
+    outline: none;
+    border: none;
+}
