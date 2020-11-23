@@ -1,40 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
 
+<body>
+
+    <div>
+        <h1>Input Array: (Ex: 1,2,3,...)</h1>
+        <label for="">Mảng A: </label>
+        <input type="text" id="user-input-a">
+        <label for="">Mảng B: </label>
+        <input type="text" id="user-input-b">
+
+        <button onclick="convert()">convert</button>
+        <h2 id="arr-input"></h2>
+        <h2 id="result">Result</h2>
+
+    </div>
 
 
     <script>
-        function controler(a,b) {
-         alert('Mảng A: ' +a )
-         alert('Mảng B: ' +b )
-            const c = a.concat(b)
-            const filter = c.filter((item, index) => c.indexOf(item) === index );
-            alert('Mảng sau khi được lọc trùng nhau: ' + filter)
-          
-        }
-        const arr1 = [];
-        const arr2 = [];
+        // function controler(a,b) {
+        //  alert('Mảng A: ' +a )
+        //  alert('Mảng B: ' +b )
+        //     const c = a.concat(b)
+        //     const filter = c.filter((item, index) => c.indexOf(item) === index );
+        //     alert('Mảng sau khi được lọc trùng nhau: ' + filter)
 
-        const ques1 = prompt('Nhập độ dài mảng A: ')
-        const ques2 = prompt('Nhập độ dài mảng B: ')
-        for(let i =0;i<ques1;i++) {
-            const a = prompt('Nhập mảng a thứ ' + (i+1) + ':')
-            arr1.push(a);
+        // }
+        // const arr1 = [];
+        // const arr2 = [];
+
+        // const ques1 = prompt('Nhập độ dài mảng A: ')
+        // const ques2 = prompt('Nhập độ dài mảng B: ')
+        // for(let i =0;i<ques1;i++) {
+        //     const a = prompt('Nhập mảng a thứ ' + (i+1) + ':')
+        //     arr1.push(a);
+        // }
+        // for(let i =0;i<ques2;i++) {
+        //     const b = prompt('Nhập mảng b thứ ' + (i+1) + ':')
+        //     arr2.push(b);
+        // }
+
+
+        // controler(arr1,arr2)
+        function convert() {
+            const userInputA = document.getElementById('user-input-a')
+            const userInputB = document.getElementById('user-input-b')
+            document.getElementById('arr-input').innerHTML = 'Arr A: ' + userInputA.value.split(',').join('-') + '<br>' + 'Arr B: ' + userInputB.value.split(',').join('-')
+            controler(userInputA, userInputB)
+            userInputA.value = ""
+            userInputB.value = ""
+            
+
+
+
         }
-        for(let i =0;i<ques2;i++) {
-            const b = prompt('Nhập mảng b thứ ' + (i+1) + ':')
-            arr2.push(b);
+
+        function controler(arr1, arr2) {
+            const arrA = arr1.value.split(',')
+            const arrB = arr2.value.split(',')
+           
+
+
+            for (var i = 0; i < arrA.length; i++) {
+                for (var j = 0; j < arrB.length; j++) {
+                    if (arrA[i] == arrB[j]) {
+                        arrA.splice(i, 1);
+                        arrB.splice(j, 1);
+                    }
+                }
+            }
+          var result =   arrA.concat(arrB)
+         document.getElementById('result').innerHTML = "Result: " +result.join('-')
+
         }
-        
-        
-        controler(arr1,arr2)
     </script>
 </body>
+
 </html>

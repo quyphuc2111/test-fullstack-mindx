@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+const doibong = [
+    {
+        name: "Arsenal",
+        points: 99,
+        GD: 45
+    },
+    {
+        name: "Chelsea",
+        points: 75,
+        GD: 39
+    },
+    {
+        name: "Manchester United",
+        points: 60,
+        GD: 29
+    },
+    {
+        name: "Liverpool",
+        points: 88,
+        GD: 39
+    },
+    {
+        name: "Real Madrid",
+        points: 99,
+        GD: 29
+
+    },
+    {
+        name: "Bayern Munich",
+        points: 99,
+        GD: 29
+
+    }
+    
+    
+]
+//sort point
+
+doibong.sort((a,b)=> b.points - a.points)
+
+
+//sap xep GD
+
+doibong.sort((a,b)=> {
+   if(a.points == b.points) {
+       return b.GD - a.GD
+   }
+} )
+
+// sap xep the alphabelt
+
+doibong.sort((a,b)=> {
+   if(a.points == b.points) {
+       if(a.GD == b.GD) {
+        return b.name - a.name
+       }
+       
+   }
+} )
+
+
+console.log(doibong)
+    </script>
+</body>
+</html>
